@@ -12,7 +12,7 @@ const routes = [
       component: HelloWorld
     },
     {
-      path: 'inner',
+      path: '/inner',
       component: Inner
     }
   ];

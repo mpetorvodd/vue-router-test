@@ -1,16 +1,26 @@
 <template>
   <div class="inner">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique sapiente repellat incidunt labore harum odit, iusto voluptate soluta? Veritatis, molestias.
+    <div class="tabs">
+      <div class="tab" v-if="routeHash == '#test1'">Tab for hash {{routeHash}}</div>
+      <div class="tab" v-if="routeHash == '#test2'">Tab for hash {{routeHash}}</div>
+      <div class="tab" v-if="routeHash == '#test3'">Tab for hash {{routeHash}}</div>
+      <div class="tab" v-if="routeHash == '#test4'">Tab for hash {{routeHash}}</div>
+      <div class="tab" v-if="routeHash == '#test5'">Tab for hash {{routeHash}}</div>
+    </div>
   </div>
 </template>
 
 <script>
+import hash from '@/mixins/hash'
+
 export default {
+  mixins: [hash],
+
   name: 'Inner',
 
   data () {
     return {
-
+      
     }
   }
 }
