@@ -1,26 +1,67 @@
 <template>
   <div class="inner">
     <div class="tabs">
-      <div class="tab" v-if="routeHash == '#test1'">Tab for hash {{routeHash}}</div>
-      <div class="tab" v-if="routeHash == '#test2'">Tab for hash {{routeHash}}</div>
-      <div class="tab" v-if="routeHash == '#test3'">Tab for hash {{routeHash}}</div>
-      <div class="tab" v-if="routeHash == '#test4'">Tab for hash {{routeHash}}</div>
-      <div class="tab" v-if="routeHash == '#test5'">Tab for hash {{routeHash}}</div>
+      <template v-for="(tab, index) in tabs">
+        <component 
+          :is="tab.component"  
+          :key="'tab-' + index"
+          :id="tab.id"
+          v-if="routeHash == tab.name"
+        ></component>
+      </template>
     </div>
   </div>
 </template>
 
 <script>
-import hash from '@/mixins/hash'
+import tabLoader from '@/mixins/tabLoader'
+import tab from '@/components/tab'
+import tabDefault from '@/components/tabDefault'
 
 export default {
-  mixins: [hash],
+  mixins: [tabLoader],
 
   name: 'Inner',
 
+  components: {
+    tab,
+    tabDefault
+  },
+
   data () {
     return {
-      
+      tabs: [
+        {
+          name: '',
+          component: 'tabDefault',
+          id: 0
+        },
+        {
+          name: '#test1',
+          component: 'tab',
+          id: 1
+        },
+        {
+          name: '#test2',
+          component: 'tab',
+          id: 2
+        },
+        {
+          name: '#test3',
+          component: 'tab',
+          id: 3
+        },
+        {
+          name: '#test4',
+          component: 'tab',
+          id: 4
+        },
+        {
+          name: '#test5',
+          component: 'tab',
+          id: 5
+        }
+      ]
     }
   }
 }

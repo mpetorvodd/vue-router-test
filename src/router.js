@@ -22,8 +22,4 @@ const router = new Router({
   mode: 'history'
 });
 
-router.beforeEach((to, from, next) => {
-  next();
-})
-
 export default router;
