@@ -76,7 +76,6 @@ components: {
 <template v-for="tab in tabs">
   <component 
     :is="tab.component" 
-    :block="tab.props" 
     :key="'tab.id" // Add unique keys
     v-if="routeHash == tab.name"
   ></component>
@@ -89,7 +88,6 @@ components: {
 <template v-for="tab in tabs">
   <component 
     :is="tab.component" 
-    :block="tab.props" 
     :key="'tab.id" // Add unique keys
     v-if="routeHash == tab.name"
     :id="tab.id"
