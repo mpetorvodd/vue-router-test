@@ -25,26 +25,30 @@ import tabLoader from '@/mixins/tabLoader'
 mixins: [tabLoader],
 ```
 
-#### 3. Create `tabs` Array with objects:
+#### 3. Create `tabs` Array with objects in the component data:
 
 ```
-tabs: [
-  {
-    name: '',
-    component: 'Overview',
-    id: 1
-  },
-  {
-    name: '#stats',
-    component: 'Stats',
-    id: 2
-  },
-  {
-    name: '#news',
-    component: 'News',
-    id: 3
+data () {
+  return {
+    tabs: [
+      {
+        name: '',
+        component: 'Overview',
+        id: 1
+      },
+      {
+        name: '#stats',
+        component: 'Stats',
+        id: 2
+      },
+      {
+        name: '#news',
+        component: 'News',
+        id: 3
+      }
+    ]
   }
-]
+}
 ```
 
 - `name` should start with `#` and must match the browser hash that is supposed to open the tab.
