@@ -57,11 +57,14 @@ data () {
 **NOTE:** Components must be imported before use:
 
 ```
-import tab from '@/components/tab'
+import Overview from '@/components/Overview'
+import Stats from '@/components/Stats'
+import News from '@/components/News'
 
 ...
 
 components: {
+  Overview,
   Stats,
   News
 }
